@@ -4,8 +4,7 @@
 #include <stdlib.h>
 
 int main(int argc, char **argv);
-void execmed(char **argv);
-
+int add_num(int n, int k);
 
 
 #endif
