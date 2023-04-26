@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	char *tken;
 	int k;
 
-	(void)argc;(void)argv;
+
 	while(1){
 	printf("%s",prompts);
 	nchars = getline(&lineptr, &n, stdin);
