@@ -78,7 +78,7 @@ int _getline(data_of_program *data);
 int check_logic_ops(char *array_commands[], int i, char array_operators[]);
 
 
-/*======== expansions.c ========*/
+/*======== expand.c ========*/
 
 /* expand variables */
 void expand_variables(data_of_program *data);
@@ -87,7 +87,7 @@ void expand_variables(data_of_program *data);
 void expand_alias(data_of_program *data);
 
 /* append the string to the end of the buffer*/
-int buffer_add(char i*buffer, char *str_to_add);
+int buffer_add(char *buffer, char *str_to_add);
 
 
 /*======== str_tok.c ========*/
@@ -99,13 +99,13 @@ void tokenize(data_of_program *data);
 char *_strtok(char *line, char *delim);
 
 
-/*======== execute.c ========*/
+/*======== execution.c ========*/
 
 /* Execute a command with its entire path */
 int execute(data_of_program *data);
 
 
-/*======== builtins_list.c ========*/
+/*======== builtin.c ========*/
 
 /* If match a builtin, executes it */
 int builtins_list(data_of_program *data);
@@ -138,7 +138,7 @@ void free_all_data(data_of_program *data);
 /************** BUILTINS **************/
 
 
-/*======== builtins_more.c ========*/
+/*======== built_more.c ========*/
 
 /* Close the shell */
 int builtin_exit(data_of_program *data);
@@ -156,7 +156,7 @@ int builtin_help(data_of_program *data);
 int builtin_alias(data_of_program *data);
 
 
-/*======== builtins_env.c ========*/
+/*======== built_en.c ========*/
 
 /* Shows the environment where the shell runs */
 int builtin_env(data_of_program *data);
@@ -171,7 +171,7 @@ int builtin_unset_env(data_of_program *data);
 /************** HELPERS FOR ENVIRONMENT VARIABLES MANAGEMENT **************/
 
 
-/*======== env_management.c ========*/
+/*======== manage_env.c ========*/
 
 /* Gets the value of an environment variable */
 char *env_get_key(char *name, data_of_program *data);
@@ -234,7 +234,7 @@ int _atoi(char *s);
 int count_characters(char *string, char *character);
 
 
-/*======== alias_management.c ========*/
+/*======== alias_manage.c ========*/
 
 /* print the list of alias */
 int print_alias(data_of_program *data, char *alias);
