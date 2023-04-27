@@ -6,7 +6,7 @@
  *
  * Return: nothing, but sets errno.
  */
-void expand_variables(data_of_program *data)
+void expand_variables(data_program *data)
 {
 	int n, k;
 	char line[BUFFER_SIZE] = {0}, expansion[BUFFER_SIZE] = {'\0'}, *temp;
@@ -56,7 +56,7 @@ void expand_variables(data_of_program *data)
  *
  * Return: nothing, but sets errno.
  */
-void expand_alias(data_of_program *data)
+void expand_alias(data_program *data)
 {
 	int n, k, was_expanded = 0;
 	char line[BUFFER_SIZE] = {0}, expansion[BUFFER_SIZE] = {'\0'}, *temp;

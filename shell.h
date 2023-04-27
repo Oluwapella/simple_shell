@@ -14,7 +14,11 @@
 #include <fcntl.h> 
 
 
+<<<<<<< HEAD
+/************* STRUCTURES **************/
+=======
 #include "macros.h" 
+>>>>>>> 03d8dc6e7ec8504807aca1647c9911b57e4bd60f
 
 /**
  * struct info- struct for the program's data
@@ -63,13 +67,17 @@ void in_data(data_program *string, int arc, char *argv[], char **env);
 void teamwk(char *prompt, data_program *string);
 
 /* Print the prompt in a new line */
-void con_ctrl_c(int opr UNUSED);
+void con_ctrl_c(int opr, UNUSED);
 
 
 /*========  _getline.c  ========*/
 
 /* Read one line of the standar input*/
+<<<<<<< HEAD
+int _getline(data_program *data);
+=======
 int _getline(data_program *string);
+>>>>>>> 03d8dc6e7ec8504807aca1647c9911b57e4bd60f
 
 /* split the each line for the logical operators if it exist */
 int check_logic(char *array_commands[], int i, char array_operators[]);
@@ -111,10 +119,17 @@ int builtins_list(data_program *data);
 /*======== find_in_path.c ========*/
 
 /* Creates an array of the path directories */
+<<<<<<< HEAD
+char **tokenize_path(data_program *data);
+
+/* Search for program in path */
+int find_program(data_program *data);
+=======
 char **tokeize_path(data_program *data);
 
 /* Search for program in path */
 int program(data_program *data);
+>>>>>>> 03d8dc6e7ec8504807aca1647c9911b57e4bd60f
 
 
 /************** HELPERS FOR MEMORY MANAGEMENT **************/
@@ -126,10 +141,17 @@ int program(data_program *data);
 void pointers_of_array_free(char **directories);
 
 /* Free the fields needed each loop */
+<<<<<<< HEAD
+void free_recurrent_data(data_program *data);
+
+/* Free all field of the data */
+void free_all_data(data_program *data);
+=======
 void current_data_free(data_program *data);
 
 /* Free all field of the data */
 void data_to_free(data_program *data);
+>>>>>>> 03d8dc6e7ec8504807aca1647c9911b57e4bd60f
 
 
 /************** BUILTINS **************/
