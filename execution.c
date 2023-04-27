@@ -4,7 +4,7 @@
  * @data: a pointer to the program's data
  * Return: If sucess returns zero, otherwise, return -1.
  */
-int execute(data_of_program *data)
+int execute(data_program *data)
 {
 	int retval = 0, status;
 	pid_t pidd;
