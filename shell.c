@@ -41,5 +41,5 @@ int main(int ac, char **av)
 	read_history(info);
 	hsh(info, av);
 	return (EXIT_SUCCESS);
-}
+	
 }
