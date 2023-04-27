@@ -1,29 +1,26 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-#include <stdio.h> /* for printf*/
-#include <unistd.h> /* for fork, execve*/
+#include <stdio.h>
+#include <unistd.h> 
 #include <stdlib.h>
-#include <string.h> /* for strtok*/
+#include <string.h>
 #include <stddef.h>
-#include <errno.h> /* for errno and perror */
-#include <sys/types.h> /* for type pid */
-#include <sys/wait.h> /* for wait */
-#include <sys/stat.h> /* for use of stat function */
-#include <signal.h> /* for signal management */
-#include <fcntl.h> /* for open files*/
+#include <errno.h> 
+#include <sys/types.h> 
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <signal.h> 
+#include <fcntl.h> 
 
-/************* MACROS **************/
 
-#include "macros.h" /* for msg help and prompt */
-
-/************* STRUCTURES **************/
+#include "macros.h" 
 
 /**
  * struct info- struct for the program's data
  * @program_name: the name of the executable
  * @input_line: pointer to the input read for _getline
- * @command_name: pointer to the first command typed by the user
+ * @comand_name: pointer to the first command typed by the user
  * @exec_counter: number of excecuted comands
  * @file_descriptor: file descriptor to the input of commands
  * @tokens: pointer to array of tokenized input
@@ -72,10 +69,10 @@ void con_ctrl_c(int opr UNUSED);
 /*========  _getline.c  ========*/
 
 /* Read one line of the standar input*/
-int _getline(data_of_program *data);
+int _getline(data_program *string);
 
 /* split the each line for the logical operators if it exist */
-int check_logic_ops(char *array_commands[], int i, char array_operators[]);
+int check_logic(char *array_commands[], int i, char array_operators[]);
 
 
 /*======== expansions.c ========*/
@@ -93,10 +90,10 @@ int buffer_add(char i*buffer, char *str_to_add);
 /*======== str_tok.c ========*/
 
 /* Separate the string in tokens using a designed delimiter */
-void tokenize(data_of_program *data);
+void tokenize(data_program *data);
 
 /* Creates a pointer to a part of a string */
-char *_strtok(char *line, char *delim);
+char *tokes(char *line, char *delim);
 
 
 /*======== execute.c ========*/
@@ -114,10 +111,10 @@ int builtins_list(data_of_program *data);
 /*======== find_in_path.c ========*/
 
 /* Creates an array of the path directories */
-char **tokenize_path(data_of_program *data);
+char **tokeize_path(data_program *data);
 
 /* Search for program in path */
-int find_program(data_of_program *data);
+int program(data_program *data);
 
 
 /************** HELPERS FOR MEMORY MANAGEMENT **************/
@@ -126,13 +123,13 @@ int find_program(data_of_program *data);
 /*======== helpers_free.c ========*/
 
 /* Frees the memory for directories */
-void free_array_of_pointers(char **directories);
+void pointers_of_array_free(char **directories);
 
 /* Free the fields needed each loop */
-void free_recurrent_data(data_of_program *data);
+void current_data_free(data_program *data);
 
 /* Free all field of the data */
-void free_all_data(data_of_program *data);
+void data_to_free(data_program *data);
 
 
 /************** BUILTINS **************/
