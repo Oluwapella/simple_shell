@@ -32,10 +32,10 @@ void tokenize(data_program *data)
 		exit(errno);
 	}
 	i = 0;
-	data->tokens[i] = str_duplicate(_strtok(data->input_line, delimi));
-	data->command_name = str_duplicate(data->tokens[0]);
+	data->tokens[i] = str_duplicate(strtok(data->input_line, delimi));
+	data->comand_name = str_duplicate(data->tokens[0]);
 	while (data->tokens[i++])
 	{
-		data->tokens[i] = str_duplicate(_strtok(NULL, delimi));
+		data->tokens[i] = str_duplicate(strtok(NULL, delimi));
 	}
 }

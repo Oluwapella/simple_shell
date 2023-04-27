@@ -5,7 +5,7 @@
  * @data: struct for the program's data
  * Return: zero if sucess, or other number if its declared in the arguments
  */
-int builtin_env(data_of_program *data)
+int builtin_env(data_program *data)
 {
 	int n;
 	char cpname[50] = {'\0'};
@@ -42,7 +42,7 @@ int builtin_env(data_of_program *data)
 			cpname[n] = data->tokens[1][n];
 		}
 		errno = 2;
-		perror(data->command_name);
+		perror(data->comand_name);
 		errno = 127;
 	}
 	return (0);
@@ -53,7 +53,7 @@ int builtin_env(data_of_program *data)
  * @data: struct for the program's data
  * Return: zero if sucess, or other number if its declared in the arguments
  */
-int builtin_set_env(data_of_program *data)
+int builtin_set_env(data_program *data)
 {
 	/* validate args */
 	if (data->tokens[1] == NULL || data->tokens[2] == NULL)
@@ -61,7 +61,7 @@ int builtin_set_env(data_of_program *data)
 	if (data->tokens[3] != NULL)
 	{
 		errno = E2BIG;
-		perror(data->command_name);
+		perror(data->comand_name);
 		return (5);
 	}
 
@@ -75,7 +75,7 @@ int builtin_set_env(data_of_program *data)
  * @data: struct for the program's data'
  * Return: ..
  */
-int builtin_unset_env(data_of_program *data)
+int builtin_unset_env(data_program *data)
 {
 	/* validate args */
 	if (data->tokens[1] == NULL)
@@ -83,7 +83,7 @@ int builtin_unset_env(data_of_program *data)
 	if (data->tokens[2] != NULL)
 	{
 		errno = E2BIG;
-		perror(data->command_name);
+		perror(data->comand_name);
 		return (5);
 	}
 	env_remove_key(data->tokens[1], data);

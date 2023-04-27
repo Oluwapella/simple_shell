@@ -5,7 +5,7 @@
  * @data: struct of the program's data
  * Return: Nothing
  */
-void current_data_free(data__program *data)
+void current_data_free(data_program *data)
 {
 	if (data->tokens)
 	pointers_of_array_free(data->tokens);

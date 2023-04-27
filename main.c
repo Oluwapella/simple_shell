@@ -113,7 +113,7 @@ void teamwk(char *prompt, data_program *string)
 				if (error_code != 0)
 					_print_error(error_code, string);
 			}
-			free_recurrent_data(string);
+			current_data_free(string);
 		}
 	}
 }

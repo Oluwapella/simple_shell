@@ -78,10 +78,10 @@ int check_logic(char *array_commands[], int i, char array_operators[]);
 /*======== expand.c ========*/
 
 /* expand variables */
-void expand_variables(data_of_program *data);
+void expand_variables(data_program *data);
 
 /* expand aliases */
-void expand_alias(data_of_program *data);
+void expand_alias(data_program *data);
 
 /* append the string to the end of the buffer*/
 int buffer_add(char *buffer, char *str_to_add);
@@ -99,13 +99,13 @@ char *tokes(char *line, char *delim);
 /*======== execution.c ========*/
 
 /* Execute a command with its entire path */
-int execute(data_of_program *data);
+int execute(data_program *data);
 
 
 /*======== builtin.c ========*/
 
 /* If match a builtin, executes it */
-int builtins_list(data_of_program *data);
+int builtins_list(data_program *data);
 
 
 /*======== find_in_path.c ========*/
@@ -138,31 +138,31 @@ void data_to_free(data_program *data);
 /*======== built_more.c ========*/
 
 /* Close the shell */
-int builtin_exit(data_of_program *data);
+int builtin_exit(data_program *data);
 
 /* Change the current directory */
-int builtin_cd(data_of_program *data);
+int builtin_cd(data_program *data);
 
 /* set the work directory */
-int set_work_directory(data_of_program *data, char *new_dir);
+int set_work_directory(data_program *data, char *new_dir);
 
 /* show help information */
-int builtin_help(data_of_program *data);
+int builtin_help(data_program *data);
 
 /* set, unset and show alias */
-int builtin_alias(data_of_program *data);
+int builtin_alias(data_program *data);
 
 
 /*======== built_en.c ========*/
 
 /* Shows the environment where the shell runs */
-int builtin_env(data_of_program *data);
+int builtin_env(data_program *data);
 
 /* create or override a variable of environment */
-int builtin_set_env(data_of_program *data);
+int builtin_set_env(data_program *data);
 
 /* delete a variable of environment */
-int builtin_unset_env(data_of_program *data);
+int builtin_unset_env(data_program *data);
 
 
 /************** HELPERS FOR ENVIRONMENT VARIABLES MANAGEMENT **************/
@@ -171,16 +171,16 @@ int builtin_unset_env(data_of_program *data);
 /*======== manage_env.c ========*/
 
 /* Gets the value of an environment variable */
-char *env_get_key(char *name, data_of_program *data);
+char *env_get_key(char *name, data_program *data);
 
 /* Overwrite the value of the environment variable */
-int env_set_key(char *key, char *value, data_of_program *data);
+int env_set_key(char *key, char *value, data_program *data);
 
 /* Remove a key from the environment */
-int env_remove_key(char *key, data_of_program *data);
+int env_remove_key(char *key, data_program *data);
 
 /* prints the current environ */
-void print_environ(data_of_program *data);
+void print_environ(data_program *data);
 
 
 /************** HELPERS FOR PRINTING **************/
@@ -195,7 +195,7 @@ int _print(char *string);
 int _printe(char *string);
 
 /* Prints a string in the standar error */
-int _print_error(int errorcode, data_of_program *data);
+int _print_error(int errorcode, data_program *data);
 
 
 /************** HELPERS FOR STRINGS MANAGEMENT **************/
@@ -234,13 +234,13 @@ int count_characters(char *string, char *character);
 /*======== alias_manage.c ========*/
 
 /* print the list of alias */
-int print_alias(data_of_program *data, char *alias);
+int print_alias(data_program *data, char *alias);
 
 /* get the alias name */
-char *get_alias(data_of_program *data, char *alias);
+char *get_alias(data_program *data, char *alias);
 
 /* set the alias name */
-int set_alias(char *alias_string, data_of_program *data);
+int set_alias(char *alias_string, data_program *data);
 
 
 #endif /* SHELL_H */

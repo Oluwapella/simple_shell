@@ -40,13 +40,13 @@ int program(data_program *data)
 			errno = 0;
 			free(data->tokens[0]);
 			data->tokens[0] = str_duplicate(process[i]);
-			free_array_of_pointers(process);
+			pointers_of_array_free(process);
 			return (cd);
 		}
 	}
 	free(data->tokens[0]);
 	data->tokens[0] = NULL;
-	free_array_of_pointers(process);
+	pointers_of_array_free(process);
 	return (cd);
 }
 
@@ -84,10 +84,10 @@ char **tokeize_path(data_program *data)
 
 	/*tokenize and duplicate each token of path*/
 	i = 0;
-	tokens[i] = str_duplicate(_strtok(PATHS, ":"));
+	tokens[i] = str_duplicate(strtok(PATHS, ":"));
 	while (tokens[i++])
 	{
-		tokens[i] = str_duplicate(_strtok(NULL, ":"));
+		tokens[i] = str_duplicate(strtok(NULL, ":"));
 	}
 
 	free(PATHS);
@@ -109,7 +109,7 @@ int ch_file(char *p_path)
 
 	if (stat(p_path, &sb) != -1)
 	{
-		if (S_ISDIR(sb.st_mode) ||  access(p__path, X_OK))
+		if (S_ISDIR(sb.st_mode) ||  access(p_path, X_OK))
 		{
 			errno = 126;
 			return (126);
