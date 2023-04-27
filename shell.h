@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sting.h>
+
 
 void teamwk(char **argv, char **env);
 
