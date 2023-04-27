@@ -7,11 +7,7 @@
  */
 void teamwk(char **agrv, char **env)
 {
-	char *ptr = malloc(sizeof(char))
-	if (ptr == NULL){
-	printf("erro: memory failed\n");
-	exit(EXIT_FAILURE)
-}
+	char *ptr = NULL;
 	int k, status;
 	size_t n = 0;
 	ssize_t numc;
