@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 #include <sys/wait.h>
 /**
  * teamwk - fuction that call aeguments
