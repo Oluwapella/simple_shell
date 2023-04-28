@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <stdio.h>
 
 int ch_file(char *p_path);
 

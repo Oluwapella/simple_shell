@@ -72,7 +72,7 @@ void teamwk(char *prompt, data_program *data);
 void handle_ctrl_c(int opr UNUSED );
 
 
-/*========  _getline.c  ========*/
+/*========  getline.c  ========*/
 
 /* Read one line of the standar input*/
 
@@ -97,7 +97,7 @@ void expand_alias(data_program *data);
 int buffer_add(char *buffer, char *str_to_add);
 
 
-/*======== str_tok.c ========*/
+/*======== tokenize.c ========*/
 
 /* Separate the string in tokens using a designed delimiter */
 void tokenize(data_program *data);
@@ -118,7 +118,7 @@ int execute(data_program *data);
 int builtins_list(data_program *data);
 
 
-/*======== find_in_path.c ========*/
+/*======== path.c ========*/
 
 char **tokenize_path(data_program *data);
 
@@ -134,7 +134,7 @@ int program(data_program *data);
 /************** HELPERS FOR MEMORY MANAGEMENT **************/
 
 
-/*======== helpers_free.c ========*/
+/*======== help_1.c ========*/
 
 /* Frees the memory for directories */
 void pointers_of_array_free(char **directories);
@@ -207,7 +207,7 @@ void print_environ(data_program *data);
 /************** HELPERS FOR PRINTING **************/
 
 
-/*======== helpers_print.c ========*/
+/*======== help_p.c ========*/
 
 /* Prints a string in the standar output */
 int _print(char *string);
@@ -222,7 +222,7 @@ int _print_error(int errorcode, data_program *data);
 /************** HELPERS FOR STRINGS MANAGEMENT **************/
 
 
-/*======== helpers_string.c ========*/
+/*======== help_str.c ========*/
 
 /* Counts the number of characters of a string */
 int str_length(char *string);
@@ -240,7 +240,7 @@ char *str_concat(char *string1, char *string2);
 void str_reverse(char *striing);
 
 
-/*======== helpers_numbers.c ========*/
+/*======== help_num.c ========*/
 
 /* Cast from int to string */
 void long_to_string(long number, char *string, int base);

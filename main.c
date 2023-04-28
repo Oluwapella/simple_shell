@@ -1,4 +1,6 @@
 #include "shell.h"
+#include <stdio.h>
+
 /**
  * main - mian function  of the program
  * @argc: counts  values received from the command line
@@ -45,7 +47,7 @@ void handle_ctrl_c(int opr UNUSED)
  */
 void inicialize_data(data_program *data, int argc, char *argv[], char **env)
 {
-	int i = 0;
+	int n = 0;
 
 	data->program_name = argv[0];
 	data->input_line = NULL;
@@ -69,18 +71,18 @@ void inicialize_data(data_program *data, int argc, char *argv[], char **env)
 	data->env = malloc(sizeof(char *) * 50);
 	if (env)
 	{
-		for (; env[i]; i++)
+		for (; env[n]; n++)
 		{
-			data->env[i] = str_duplicate(env[i]);
+			data->env[n] = str_duplicate(env[n]);
 		}
 	}
-	data->env[i] = NULL;
+	data->env[n] = NULL;
 	env = data->env;
 
 	data->alias_list = malloc(sizeof(char *) * 20);
-	for (i = 0; i < 20; i++)
+	for (n = 0; n < 20; n++)
 	{
-		data->alias_list[i] = NULL;
+		data->alias_list[n] = NULL;
 	}
 }
 /**

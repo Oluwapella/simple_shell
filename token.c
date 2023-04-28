@@ -1,4 +1,6 @@
 #include "shell.h"
+#include <stdio.h>
+
 /**
  * tokes - separates strings with delimiters
  * @line: It´s pointer to array we receive in getline.

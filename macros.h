@@ -1,3 +1,4 @@
+#include <stdio.h>
 #ifndef HELPERS_H
 #define HELPERS_H
 
