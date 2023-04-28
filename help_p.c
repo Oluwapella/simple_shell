@@ -28,7 +28,7 @@ int _printe(char *string)
  * Return: the number of bytes writed or .
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _print_error(int errorcode, data_of_program *data)
+int _print_error(int errorcode, data_program *data)
 {
 	char n_as_string[10] = {'\0'};
 
@@ -54,7 +54,7 @@ int _print_error(int errorcode, data_of_program *data)
 		_printe(": ");
 		_printe(n_as_string);
 		_printe(": ");
-		_printe(data->command_name);
+		_printe(data->comand_name);
 		_printe(": not found\n");
 	}
 	else if (errorcode == 126)
@@ -63,7 +63,7 @@ int _print_error(int errorcode, data_of_program *data)
 		_printe(": ");
 		_printe(n_as_string);
 		_printe(": ");
-		_printe(data->command_name);
+		_printe(data->comand_name);
 		_printe(": Permission denied\n");
 	}
 	return (0);

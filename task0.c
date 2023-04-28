@@ -1,14 +1,15 @@
 #include <stdio.h>
+#include "shell.h"
 
 /**
- * main - function
+ * sum_num - function that substract
  * @x: a varable
  *@y: a varable
  * Return: (x, y)
  */
 
 
-int main(int x, int y)
+int sum_num(int x, int y)
 {
-	return (x, Y);
+	return (x - y);
 }

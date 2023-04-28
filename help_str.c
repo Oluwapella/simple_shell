@@ -148,7 +148,7 @@ void str_reverse(char *string)
 	while (n < length)
 	{
 		hold = string[n];
-		string[i++] = string[length];
+		string[n++] = string[length];
 		string[length--] = hold;
 	}
 }

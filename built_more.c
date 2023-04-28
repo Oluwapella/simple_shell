@@ -99,7 +99,7 @@ int builtin_help(data_program *data)
 	int k, length = 0;
 	char *mensajes[6] = {NULL};
 
-	mensajes[0] = HELP_MSG;
+	mensajes[0] = HELP_TM;
 
 	/* validate args */
 	if (data->tokens[1] == NULL)
@@ -124,7 +124,7 @@ int builtin_help(data_program *data)
 		length = str_length(data->tokens[1]);
 		if (str_compare(data->tokens[1], mensajes[k], length))
 		{
-			_print(mensajes[i] + length + 1);
+			_print(mensajes[k] + length + 1);
 			return (1);
 		}
 	}
@@ -150,7 +150,7 @@ int builtin_alias(data_program *data)
 	while (data->tokens[++k])
 	{/* if there are arguments, set or print each env variable*/
 		if (count_characters(data->tokens[k], "="))
-			set_alias(data->tokens[i], data);
+			set_alias(data->tokens[k], data);
 		else
 			print_alias(data, data->tokens[k]);
 	}

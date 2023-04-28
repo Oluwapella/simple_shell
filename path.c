@@ -24,7 +24,7 @@ int program(data_program *data)
 	if (!data->tokens[0])
 		return (2);
 
-	process = tokeize_path(data);/* search in the PATH */
+	process = tokenize_path(data);/* search in the PATH */
 
 	if (!process || !process[0])
 	{
@@ -51,12 +51,12 @@ int program(data_program *data)
 }
 
 /**
- * tokeize_path - tokenize the path in directories
+ * tokenize_path - tokenize the path in directories
  * @data: a pointer to the program's data
  * Return: array of path directories
  */
 
-char **tokeize_path(data_program *data)
+char **tokenize_path(data_program *data)
 {
 	int i = 0;
 	int counter = 2;

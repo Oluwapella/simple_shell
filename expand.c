@@ -69,7 +69,7 @@ void expand_alias(data_program *data)
 	for (n = 0; line[n]; n++)
 	{
 		for (k = 0; line[n + k] && line[n + k] != ' '; k++)
-			expansion[j] = line[n + k];
+			expansion[k] = line[n + k];
 		expansion[k] = '\0';
 
 		temp = get_alias(data, expansion);

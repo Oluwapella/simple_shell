@@ -55,7 +55,7 @@ char *get_alias(data_program *data, char *name)
 
 	for (n = 0; data->alias_list[n]; n++)
 	{/* Iterates through the environ and check for coincidence of the varname */
-		if (str_compare(name, data->alias_list[i], alias_length) &&
+		if (str_compare(name, data->alias_list[n], alias_length) &&
 			data->alias_list[n][alias_length] == '=')
 		{/* returns the value of the key NAME=  when find it */
 			return (data->alias_list[n] + alias_length + 1);

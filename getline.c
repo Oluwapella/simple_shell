@@ -33,7 +33,7 @@ int _getline(data_program *string)
 		/* split lines for \n or ; */
 		i = 0;
 		do {
-			array_commands[i] = str_duplicate(_strtok(i ? NULL : buff, "\n;"));
+			array_commands[i] = str_duplicate(strtok(i ? NULL : buff, "\n;"));
 			/*checks and split for && and || operators*/
 			i = check_logic(array_commands, i, array_operators);
 		} while (array_commands[i++]);

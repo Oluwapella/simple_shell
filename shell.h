@@ -14,11 +14,11 @@
 #include <fcntl.h> 
 
 
-<<<<<<< HEAD
+
 /************* STRUCTURES **************/
-=======
+
 #include "macros.h" 
->>>>>>> 03d8dc6e7ec8504807aca1647c9911b57e4bd60f
+
 
 /**
  * struct info- struct for the program's data
@@ -43,6 +43,8 @@ typedef struct info
 	char **alias_list;
 } data_program;
 
+int sum_num(int x, int y);
+
 /**
  * struct builtins - struct for the builtins
  * @builtin: the name of the builtin
@@ -51,7 +53,7 @@ typedef struct info
 typedef struct builtins
 {
 	char *builtin;
-	int (*function)(data_program *string);
+	int (*function)(data_program *data);
 } builtins;
 
 
@@ -61,23 +63,23 @@ typedef struct builtins
 /*========  shell.c  ========*/
 
 /* Inicialize the struct with the info of the program */
-void in_data(data_program *string, int arc, char *argv[], char **env);
+void inicialize_data(data_program *data, int arc, char *argv[], char **env);
 
 /* Makes the infinite loop that shows the prompt*/
-void teamwk(char *prompt, data_program *string);
+void teamwk(char *prompt, data_program *data);
 
 /* Print the prompt in a new line */
-void con_ctrl_c(int opr, UNUSED);
+void handle_ctrl_c(int opr UNUSED );
 
 
 /*========  _getline.c  ========*/
 
 /* Read one line of the standar input*/
-<<<<<<< HEAD
+
 int _getline(data_program *data);
-=======
+
 int _getline(data_program *string);
->>>>>>> 03d8dc6e7ec8504807aca1647c9911b57e4bd60f
+
 
 /* split the each line for the logical operators if it exist */
 int check_logic(char *array_commands[], int i, char array_operators[]);
@@ -118,18 +120,15 @@ int builtins_list(data_program *data);
 
 /*======== find_in_path.c ========*/
 
-/* Creates an array of the path directories */
-<<<<<<< HEAD
 char **tokenize_path(data_program *data);
 
-/* Search for program in path */
-int find_program(data_program *data);
-=======
-char **tokeize_path(data_program *data);
 
-/* Search for program in path */
+int find_program(data_program *data);
+
+char **tokenize_path(data_program *data);
+
 int program(data_program *data);
->>>>>>> 03d8dc6e7ec8504807aca1647c9911b57e4bd60f
+
 
 
 /************** HELPERS FOR MEMORY MANAGEMENT **************/
@@ -141,17 +140,17 @@ int program(data_program *data);
 void pointers_of_array_free(char **directories);
 
 /* Free the fields needed each loop */
-<<<<<<< HEAD
+
 void free_recurrent_data(data_program *data);
 
 /* Free all field of the data */
 void free_all_data(data_program *data);
-=======
+
 void current_data_free(data_program *data);
 
 /* Free all field of the data */
 void data_to_free(data_program *data);
->>>>>>> 03d8dc6e7ec8504807aca1647c9911b57e4bd60f
+
 
 
 /************** BUILTINS **************/
@@ -238,7 +237,7 @@ int str_compare(char *string1, char *string2, int number);
 char *str_concat(char *string1, char *string2);
 
 /* Reverse a string */
-void str_reverse(char *string);
+void str_reverse(char *striing);
 
 
 /*======== helpers_numbers.c ========*/
