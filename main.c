@@ -101,7 +101,7 @@ void teamwk(char *prompt, data_program *data)
 
 		if (error_code == EOF)
 		{
-			free_all_data(data);
+			free(data);
 			exit(errno); /* if EOF is the fisrt Char of string, exit*/
 		}
 		if (string_len >= 1)
