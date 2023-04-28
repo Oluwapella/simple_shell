@@ -43,8 +43,6 @@ typedef struct info
 	char **alias_list;
 } data_program;
 
-int sum(int x, int y);
-
 /**
  * struct builtins - struct for the builtins
  * @builtin: the name of the builtin
