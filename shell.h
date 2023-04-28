@@ -41,8 +41,7 @@ typedef struct info
 	char **tokens;
 	char **env;
 	char **alias_list;
- data_program;
-}
+} data_program;
 
 int sum(int x, int y);
 
